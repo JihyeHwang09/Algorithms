@@ -5,6 +5,15 @@
 호출 예시:
 
 ```js
+function larger(x,y) {
+    if(x > y) {
+        return x;
+    } else {
+        return y;
+    }
+}
+
+
 larger(4, 12); // 결과: 12
 ```
 
@@ -15,6 +24,18 @@ larger(4, 12); // 결과: 12
 호출 예시:
 
 ```js
+function isPositive(x,y,z) {
+    var num = x*y*z;
+    if(num > 0){
+        return true;
+    } else if(num <= 0) {
+        return false;
+    } else {
+        throw new Error('입력값이 잘못되었습니다.');
+    }
+}
+
+
 isPositive(1, 2, 10) // 반환값: true
 isPositive(-1, 4, 5) // 반환값: false
 isPositive('열다섯', 10, 2) // 에러: Error: 입력값이 잘못되었습니다.
@@ -30,9 +51,16 @@ throw new Error('입력값이 잘못되었습니다.');
 
 어떤 숫자(num)가 짝수인지 홀수인지 출력하는 함수(printEvenOdd)를 작성하세요.
 
-호출 예시:
-
 ```js
+function printEvenOdd(num) {
+    if(num%2 === 0) {
+        console.log('num: 짝수');
+    } else {
+        console.log('num: 홀수');
+    }
+    
+ }
+
 printEvenOdd(5) // 출력: '5: 홀수'
 printEvenOdd(10) // 출력: '10: 짝수'
 ```
@@ -41,9 +69,18 @@ printEvenOdd(10) // 출력: '10: 짝수'
 
 문제 3번의 함수(printEvenOdd)를 이용해서, 1부터 20까지의 수가 각각 짝수인지 홀수인지 출력하는 함수(printEvenOdd20)를 작성하세요.
 
-호출 예시:
-
 ```js
+function printEvenOdd20(num) {
+    if(num % 2 === 0) {
+        console.log( num + ': 짝수');
+    } else {
+        console.log( num + ': 홀수');
+        }
+    }
+for(let i = 0; i <= 20; i++) {
+    printEvenOdd20(i);
+}
+
 printEvenOdd20();
 
 /*
@@ -75,9 +112,14 @@ printEvenOdd20();
 
 세 수를 입력받아 큰 것부터 차례대로 출력하는 함수(printLargerFirst)를 작성하세요.
 
-호출 예시:
-
 ```js
+
+function printLargerFirst(x, y, z) {
+    
+}
+
+
+
 printLargerFirst(5, 15, -2) // 출력: 15, 5, -2
 ```
 
@@ -88,6 +130,15 @@ printLargerFirst(5, 15, -2) // 출력: 15, 5, -2
 호출 예시:
 
 ```js
+function insensitiveEqual(str1, str2) {
+    if (str1.toLowerCase() === str2.toLowerCase()) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
 insensitiveEqual('hello', 'hello'); // 반환값: true
 insensitiveEqual('hello', 'Hello'); // 반환값: true
 insensitiveEqual('hello', 'world'); // 반환값: false
@@ -100,6 +151,13 @@ insensitiveEqual('hello', 'world'); // 반환값: false
 호출 예시:
 
 ```js
+
+function hideId(x) {
+    let email = x.split('@');
+    let star = "*";
+   return star.repeat(email[0].length)+"@"+email[1];
+}
+
 hideId('ksh@fastcampus.co.kr') // 반환값: '***@fastcampus.co.kr'
 ```
 

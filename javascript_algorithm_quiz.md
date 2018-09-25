@@ -202,8 +202,6 @@ insertHyphen('437027423'); // 반환값: '4370-274-23'
 
 두 정수 `start`, `end`를 입력받아, `start`부터 `end`까지의 모든 정수를 배열로 반환하는 함수(range)를 작성하세요.
 
-호출 예시:
-
 ```js
 function range(start, end) {
   var arr = [];
@@ -221,7 +219,6 @@ range(-4, 0); // 반환값: [-4, -3, -2, -1, 0]
 
 수 타입의 값으로만 이루어진 배열 `arr`를 입력받아, 그 값들의 합을 구하는 함수(sum)를 작성하세요.
 
-호출 예시:
 
 ```js
 function sum (arr) {
@@ -240,7 +237,6 @@ sum([1, 2, 3]); // 반환값: 6
 
 두 정수 `min`, `max` 를 입력받아, `min` 이상 `max` 미만인 임의의 정수를 반환하는 함수(randomInteger)를 작성하세요.
 
-호출 예시:
 
 ```js
 function randomInteger(min, max) {

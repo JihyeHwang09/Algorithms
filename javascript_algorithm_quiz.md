@@ -36,9 +36,9 @@ function isPositive(x,y,z) {
 }
 
 
-isPositive(1, 2, 10) // 반환값: true
-isPositive(-1, 4, 5) // 반환값: false
-isPositive('열다섯', 10, 2) // 에러: Error: 입력값이 잘못되었습니다.
+isPositive(1, 2, 10); // 반환값: true
+isPositive(-1, 4, 5); // 반환값: false
+isPositive('열다섯', 10, 2); // 에러: Error: 입력값이 잘못되었습니다.
 ```
 
 에러를 발생시키는 코드는 다음과 같습니다.
@@ -58,11 +58,10 @@ function printEvenOdd(num) {
     } else {
         console.log('num: 홀수');
     }
-    
  }
 
-printEvenOdd(5) // 출력: '5: 홀수'
-printEvenOdd(10) // 출력: '10: 짝수'
+printEvenOdd(5); // 출력: '5: 홀수'
+printEvenOdd(10); // 출력: '10: 짝수'
 ```
 
 ## 문제 3-1
@@ -70,15 +69,17 @@ printEvenOdd(10) // 출력: '10: 짝수'
 문제 3번의 함수(printEvenOdd)를 이용해서, 1부터 20까지의 수가 각각 짝수인지 홀수인지 출력하는 함수(printEvenOdd20)를 작성하세요.
 
 ```js
-function printEvenOdd20(num) {
+
+function printEvenOdd20() {
+  var num = 0;
+  for (var i = 1; i <= 20; i++) {
+    num = i;
     if(num % 2 === 0) {
         console.log( num + ': 짝수');
     } else {
         console.log( num + ': 홀수');
-        }
     }
-for(let i = 0; i <= 20; i++) {
-    printEvenOdd20(i);
+  }
 }
 
 printEvenOdd20();
@@ -115,12 +116,24 @@ printEvenOdd20();
 ```js
 
 function printLargerFirst(x, y, z) {
-    
+var temp = 0;
+  if (y > x && y > z) {
+    temp = x;
+    x = y;
+    y = temp;
+  } else if (z > x && z > y) {
+    temp = x;
+    x = z;
+    z = temp;
+  } else if (z > y) {
+    temp = y;
+    y = z;
+    z = temp;
+  }
+  console.log(x, y, z);
 }
 
-
-
-printLargerFirst(5, 15, -2) // 출력: 15, 5, -2
+printLargerFirst(5, 15, -2); // 출력: 15, 5, -2
 ```
 
 ## 문제 5
@@ -158,7 +171,8 @@ function hideId(x) {
    return star.repeat(email[0].length)+"@"+email[1];
 }
 
-hideId('ksh@fastcampus.co.kr') // 반환값: '***@fastcampus.co.kr'
+hideId('ksh@fastcampus.co.kr'); // 반환값: '***@fastcampus.co.kr'
+
 ```
 
 ## 문제 7
@@ -168,6 +182,18 @@ hideId('ksh@fastcampus.co.kr') // 반환값: '***@fastcampus.co.kr'
 호출 예시:
 
 ```js
+function insertHyphen(num) {
+  var arr = num.split("");
+  var result = arr[0];
+  for (var i = 1; i < arr.length; i++) {
+    if((arr[i-1]%2)==0 && (arr[i]%2)==0){
+    result +="-";
+    }
+    result += arr[i];
+  }
+  return result;
+}
+
 insertHyphen('1122334455'); // 반환값: '112-2334-455'
 insertHyphen('437027423'); // 반환값: '4370-274-23'
 ```
@@ -179,6 +205,14 @@ insertHyphen('437027423'); // 반환값: '4370-274-23'
 호출 예시:
 
 ```js
+function range(start, end) {
+  var arr = [];
+  for (var i = start; i <= end; i++) {
+    arr.push(i);
+  }
+  return arr;
+}
+
 range(3, 6); // 반환값: [3, 4, 5, 6]
 range(-4, 0); // 반환값: [-4, -3, -2, -1, 0]
 ```
@@ -190,7 +224,16 @@ range(-4, 0); // 반환값: [-4, -3, -2, -1, 0]
 호출 예시:
 
 ```js
+function sum (arr) {
+var result = 0;
+  for (var i = 0; i < arr.length; i++){
+    result += arr[i];
+  }
+  return result;
+}
+
 sum([1, 2, 3]); // 반환값: 6
+
 ```
 
 ## 문제 10
@@ -200,5 +243,10 @@ sum([1, 2, 3]); // 반환값: 6
 호출 예시:
 
 ```js
+function randomInteger(min, max) {
+  return Math.floor((Math.random())*(max - min +1)) +min;
+}
+
 randomInteger(1, 7); // 반환값: 1, 2, 3, 4, 5, 6 중 임의의 수 하나
+
 ```
